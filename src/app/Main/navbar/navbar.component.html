@@ -1,0 +1,153 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-body-tertiary">
+  <div class="container-fluid row d-flex justify-content-center">
+    <div class="col-2 d-flex justify-content-center">
+      <a class="navbar-brand" href="/">
+        <img src="../assets/Mesa_de_trabajo_1.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        Krislyph
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse col-8 justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link link--elara" href="/"><span>Inicio</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link--elara" href="/galeria"><span>Galeria</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link--elara" href="/precios"><span>Precios</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link--elara" href="/contacto"><span>Contacto</span></a>
+        </li>
+        <li class="nav-item" id="loginButtonsin">
+          <div class="justify-content-center" *ngIf="!login">
+            <button type="button" class="btn btn-primary loginButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+            <button type="button" class="btn btn-primary loginButton ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registro</button>
+          </div>
+          <div class="col-2 d-flex justify-content-center" *ngIf="login">
+            <button type="button" class="btn btn-primary loginButton">Nose</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-2 d-flex justify-content-center" id="loginButtons" *ngIf="!login">
+      <button type="button" class="btn btn-primary loginButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
+      <button type="button" class="btn btn-primary loginButton ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registro</button>
+    </div>
+    <div class="col-2 d-flex justify-content-center" *ngIf="login">
+      <button type="button" class="btn btn-primary loginButton">Nose</button>
+    </div>
+  </div>
+</nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="">
+
+          <div class="">
+            <div class="screen">
+              <div class="screen__content">
+                <form class="login">
+                  <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" placeholder="Correo">
+                  </div>
+                  <div class="login__field">
+                    <i class="login__icon fas fa-lock"></i>
+                    <input type="password" class="login__input" placeholder="Contraseña">
+                  </div>
+                  <button class="button login__submit">
+                    <span class="button__text">Iniciar Sesion</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                  </button>
+                </form>
+                <div class="social-login">
+                  <h3>KRISLYPH</h3>
+                  <div class="social-icons">
+                    <!--<a href="#" class="social-login__icon fab fa-instagram"></a>
+                    <a href="#" class="social-login__icon fab fa-facebook"></a>
+                    <a href="#" class="social-login__icon fab fa-twitter"></a>-->
+                  </div>
+                </div>
+              </div>
+              <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="">
+
+          <div class="">
+            <div class="screen">
+              <div class="screen__content">
+                <form class="register">
+                  <div class="login__field2">
+                    <i class="login__icon fas fa-envelope"></i>
+                    <input type="text" class="login__input" placeholder="Correo">
+                  </div>
+                  <div class="login__field2">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" placeholder="Nombre">
+                  </div>
+                  <div class="login__field2">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" placeholder="Apellido">
+                  </div>
+                  <div class="login__field2">
+                    <i class="login__icon fas fa-phone"></i>
+                    <input type="text" class="login__input" placeholder="Numero de Telefono">
+                  </div>
+                  <div class="login__field2">
+                    <i class="login__icon fas fa-lock"></i>
+                    <input type="password" class="login__input" placeholder="Contraseña">
+                  </div>
+                  <button class="button login__submit">
+                    <span class="button__text">Registrarse</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                  </button>
+                </form>
+                <div class="social-login">
+                  <h3>KRISLYPH</h3>
+                  <div class="social-icons">
+                    <!--<a href="#" class="social-login__icon fab fa-instagram"></a>
+                    <a href="#" class="social-login__icon fab fa-facebook"></a>
+                    <a href="#" class="social-login__icon fab fa-twitter"></a>-->
+                  </div>
+                </div>
+              </div>
+              <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
