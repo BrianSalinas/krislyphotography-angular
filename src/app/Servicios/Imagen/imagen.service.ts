@@ -7,6 +7,7 @@ import { ModeloCategorias } from 'src/app/Modelos/ModeloCategorias';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ImagenService {
 
   imagenURL = 'http://localhost:6044/api/main/';
