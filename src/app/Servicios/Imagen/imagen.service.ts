@@ -9,7 +9,7 @@ import { ModeloCategorias } from 'src/app/Modelos/ModeloCategorias';
 })
 export class ImagenService {
 
-  imagenURL = 'http://localhost:8080/api/main/';
+  imagenURL = 'http://localhost:6044/api/main/';
 
   constructor(private httpClient: HttpClient) { }
 
