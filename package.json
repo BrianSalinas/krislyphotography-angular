@@ -1,6 +1,7 @@
 {
   "name": "krisly-photography-angular",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,6 +20,8 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "jquery": "^3.6.3",
     "mysql": "^2.18.1",
     "rxjs": "~7.5.0",

@@ -25,13 +25,16 @@
         <li class="nav-item">
           <a class="nav-link link--elara" href="/contacto"><span>Contacto</span></a>
         </li>
+        <li class="nav-item" *ngIf="login && admin">
+          <a class="nav-link link--elara" href="/adm"><span>Administracion</span></a>
+        </li>
         <li class="nav-item" id="loginButtonsin">
           <div class="justify-content-center" *ngIf="!login">
             <button type="button" class="btn btn-primary loginButton" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
             <button type="button" class="btn btn-primary loginButton ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registro</button>
           </div>
           <div class="col-2 d-flex justify-content-center" *ngIf="login">
-            <button type="button" class="btn btn-primary loginButton">Nose</button>
+            <button type="button" (click)="cerrarSesion()" class="btn btn-primary loginButton">Cerrar Sesion</button>
           </div>
         </li>
       </ul>
@@ -42,8 +45,9 @@
       <button type="button" class="btn btn-primary loginButton ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal2">Registro</button>
     </div>
     <div class="col-2 d-flex justify-content-center" *ngIf="login">
-      <button type="button" class="btn btn-primary loginButton">Nose</button>
+      <button type="button" (click)="cerrarSesion()" class="btn btn-primary loginButton">Cerrar Sesion</button>
     </div>
+
   </div>
 </nav>
 
@@ -59,15 +63,16 @@
                 <form class="login">
                   <div class="login__field">
                     <i class="login__icon fas fa-user"></i>
-                    <input type="text" class="login__input" placeholder="Correo">
+                    <input type="email" class="login__input" id="loginCorreo" placeholder="Correo">
                   </div>
                   <div class="login__field">
                     <i class="login__icon fas fa-lock"></i>
-                    <input type="password" class="login__input" placeholder="Contraseña">
+                    <input type="password" class="login__input" id="loginPass" placeholder="Contraseña">
                   </div>
-                  <button class="button login__submit">
-                    <span class="button__text">Iniciar Sesion</span>
-                    <i class="button__icon fas fa-chevron-right"></i>
+                  <button class="button login__submit" (click)="iniciarsesion()">
+                    <span class="button__text" *ngIf="!loadingButton">Iniciar Sesion</span>
+                    <i class="button__icon fas fa-chevron-right" *ngIf="!loadingButton"></i>
+                    <i class="fa-solid fa-spinner button__icon" *ngIf="loadingButton"></i>
                   </button>
                 </form>
                 <div class="social-login">

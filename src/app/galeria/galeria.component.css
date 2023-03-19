@@ -37,7 +37,7 @@ img {
 	align-items: center;
 }
 .grid-wrapper > div > img {
-	width: 100%;
+	/*width: 100%;*/
 	height: 100%;
 	object-fit: cover;
 	border-radius: 5px;
@@ -59,4 +59,8 @@ img {
 .grid-wrapper .big {
 	grid-column: span 2;
 	grid-row: span 2;
+}
+
+img{
+  object-fit: cover;
 }

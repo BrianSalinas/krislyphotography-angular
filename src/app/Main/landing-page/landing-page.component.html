@@ -42,42 +42,18 @@
     <div class="col-12 d-flex justify-content-center">
       <h2 class="display-4">Mi Trabajo</h2>
     </div>
-    <div class="row d-flex justify-content-center">
-      <div class="card-group">
-        <div class="card custom-card" style="width: 18rem;">
-          <img src="https://res.cloudinary.com/dfqgg9f1y/image/upload/v1629036614/Galeria/18_jtnlgf.jpg"
-            class="card-img-top" alt="...">
-        </div>
-        <div class="card custom-card" style="width: 18rem;">
-          <img src="https://res.cloudinary.com/dfqgg9f1y/image/upload/v1629036603/Galeria/6_fg2otr.jpg"
-            class="card-img-top" alt="...">
-        </div>
-        <div class="card custom-card" style="width: 18rem;">
-          <img src="https://res.cloudinary.com/dfqgg9f1y/image/upload/v1629036612/Galeria/21_obm1cb.jpg"
-            class="card-img-top" alt="...">
+    <div class="row d-flex justify-content-center row-cols-1 row-cols-md-3">
+      <div *ngFor="let item of imagenesLANDPAGE">
+        <div class="col mb-2">
+          <div class="card custom-card" style="width: 18rem;">
+            <img src="{{item?.imagenUrl}}" class="card-img-top" alt="...">
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 
-  <div class="container-fluid seccion-short w-50">
-    <div class="row d-flex justify-content-center">
-      <div class="card-group">
-        <div class="card custom-card" style="width: 18rem;">
-          <img src="https://res.cloudinary.com/dfqgg9f1y/image/upload/v1629036609/Galeria/8_qcqitj.jpg"
-            class="card-img-top" alt="...">
-        </div>
-        <div class="card custom-card" style="width: 18rem;">
-          <img src="https://res.cloudinary.com/dfqgg9f1y/image/upload/v1629036614/Galeria/17_nsyyuj.jpg"
-            class="card-img-top" alt="...">
-        </div>
-        <div class="card custom-card" style="width: 18rem;">
-          <img src="https://res.cloudinary.com/dfqgg9f1y/image/upload/v1629036607/Galeria/12_qwazir.jpg"
-            class="card-img-top" alt="...">
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="row seccion division section-divider">
     <div class="col-12 division-1">

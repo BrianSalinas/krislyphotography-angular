@@ -12,6 +12,10 @@ import { PreciosComponent } from './precios/precios.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { DashboardadminComponent } from './dashboardadmin/dashboardadmin.component';
 import { AdmImagenesComponent } from './adm-imagenes/adm-imagenes.component';
+import { AdmGaleriaComponent } from './adm-galeria/adm-galeria.component';
+import { AdmDashboardComponent } from './adm-dashboard/adm-dashboard.component';
+import { AdmPreciosComponent } from './adm-precios/adm-precios.component';
+import { PlanesComponent } from './planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { AdmImagenesComponent } from './adm-imagenes/adm-imagenes.component';
     PreciosComponent,
     ContactoComponent,
     DashboardadminComponent,
-    AdmImagenesComponent
+    AdmImagenesComponent,
+    AdmGaleriaComponent,
+    AdmDashboardComponent,
+    AdmPreciosComponent,
+    PlanesComponent
   ],
   imports: [
     BrowserModule,

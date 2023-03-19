@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboardadmin.component.css']
 })
 export class DashboardadminComponent {
+  opcionActual: number = 1;
+  constructor(){
+
+  }
+  ngOnInit(){
+  }
 
 }

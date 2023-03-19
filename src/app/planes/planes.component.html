@@ -1,0 +1,142 @@
+<div class="container-fluid">
+  <div class="row d-flex">
+    <div class="col-12 d-flex justify-content-end">
+      <button type="button" class="btn btn-success me-2" (click)="abrirModalGuardar()"><i class="fas fa-cart-plus"></i> Agregar Planes</button>
+      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#agregarcategoriasplanes"><i class="fab fa-pushed"></i> Agregar Categorias</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-2">
+  <div class="table-responsive mt-2">
+    <table class="table table-sm mt-2 table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre Plan</th>
+          <th scope="col">Paquete de Fotos</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Categoria</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of planes; let i=index">
+          <th>{{i}}</th>
+          <th>{{item.nombreplan}}</th>
+          <th>{{item.paquetefotos}}</th>
+          <th>{{item.precio}}</th>
+          <th>{{item.descripcion}}</th>
+          <th>{{item.categoria}}</th>
+          <th>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" (click)="abrirModalActualizar(item.id)" class="btn btn-primary btn-sm">Editar</button>
+              <button type="button" (click)="eliminarPlan(item.id)" class="btn btn-danger">Eliminar</button>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="agregarcategoriasplanes" tabindex="-1" aria-labelledby="agregarcategoriasplanesLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="agregarcategoriasplanesLabel">Agregar Categorias</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-10">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="categoriaEscogida" placeholder="Ingresar categoria" [(ngModel)]="categoriaNueva">
+            </div>
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-primary" (click)="agregarCategoria()">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <hr>
+        <h5>Lista de Categorias de la Pagina</h5>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of listaCategoriasTemporal">{{item}}</li>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="crearplanes" tabindex="-1" aria-labelledby="crearplanesLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="crearplanesLabel">Agregar Plan</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row">
+            <div class="mb-3 col-12">
+              <label for="name" class="form-label">Nombre del Plan</label>
+              <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="price" class="form-label">Precio <small class="form-text text-muted" style="font-size: 10px;">(Solo dolares no monedas)</small></label>
+              <input type="number" class="form-control" min="0" id="price" aria-describedby="priceHelp">
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="desc1" class="form-label">Descripcion #1</label>
+              <input type="text" class="form-control" id="desc1" aria-describedby="desc1Help">
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="desc2" class="form-label">Descripcion #2</label>
+              <input type="text" class="form-control" id="desc2" aria-describedby="desc2Help">
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="desc3" class="form-label">Descripcion #3</label>
+              <input type="text" class="form-control" id="desc3" aria-describedby="desc3Help">
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="desc4" class="form-label">Descripcion #4</label>
+              <input type="text" class="form-control" id="desc4" aria-describedby="desc4Help">
+            </div>
+            <div class="mb-3 col-md-6">
+              <label for="desc5" class="form-label">Descripcion #5</label>
+              <input type="text" class="form-control" id="desc5" aria-describedby="desc5lHelp">
+            </div>
+            <div class="mb-3 col-12">
+              <label for="category" class="form-label">Categoria</label>
+              <select class="form-select" aria-label="category" id="category">
+                <option *ngFor="let item of listaCategoriasTemporal; let i = index" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+            <div class="mb-3 col-12">
+              <label for="images" class="form-label">Imagenes</label>
+              <select class="form-select" aria-label="images" id="images">
+                <option *ngFor="let item of listaImagenesTipo; let i = index" value="{{item}}">{{item}}</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="guardarPlan()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
