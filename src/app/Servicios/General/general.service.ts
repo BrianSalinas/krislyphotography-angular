@@ -23,7 +23,7 @@ export class GeneralService {
 
   public ConsultaInformacionGeneral(consulta: string, variables: any): Observable<any>{
     let respuesta: Observable<any>;
-    let endPoint: string = "http://localhost:6044";
+    let endPoint: string = "krislyphotography-java-production.up.railway.app";
     let url: string = "";
 
     switch(consulta.toLowerCase()){
