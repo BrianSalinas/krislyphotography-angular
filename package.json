@@ -4,8 +4,9 @@
   "type": "module",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "serve": "node --max_old_space_size=8192 serve",
+    "start": "ng --max_old_space_size=8192 serve",
+    "build": "ng --max_old_space_size=8192 build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
