@@ -15,32 +15,32 @@ export class ImagenService {
   constructor(private httpClient: HttpClient) { }
 
   public list(): Observable<Imagen[]> {
-    return this.httpClient.get<Imagen[]>(this.imagenURL + 'list');
+    return this.httpClient.get<Imagen[]>(this.imagenURL + '/list');
   }
   public listbycat(variable:string): Observable<Imagen[]> {
-    return this.httpClient.post<Imagen[]>(this.imagenURL + 'listCAT',variable);
+    return this.httpClient.post<Imagen[]>(this.imagenURL + '/listCAT',variable);
   }
   public listCategorias(): Observable<ModeloCategorias[]> {
-    return this.httpClient.get<ModeloCategorias[]>(this.imagenURL + 'listCategorias');
+    return this.httpClient.get<ModeloCategorias[]>(this.imagenURL + '/listCategorias');
   }
 
   public upload(imagen: File): Observable<any> {
     const formData = new FormData();
     formData.append('multipartFile', imagen);
-    return this.httpClient.post<any>(this.imagenURL + 'upload', formData);
+    return this.httpClient.post<any>(this.imagenURL + '/upload', formData);
   }
 
   public delete(id: string): Observable<any> {
-    return this.httpClient.delete<any>(this.imagenURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.imagenURL + `/delete/${id}`);
   }
 
   public agregarCategoria(cat: ModeloCategorias): Observable<ModeloCategorias>{
-    return this.httpClient.post<ModeloCategorias>(this.imagenURL + "updatecategoria",cat);
+    return this.httpClient.post<ModeloCategorias>(this.imagenURL + "/updatecategoria",cat);
   }
   public agregarCategoriaGlobal(cat: string[]): Observable<string[]>{
-    return this.httpClient.post<string[]>(this.imagenURL + "addCategoria",cat);
+    return this.httpClient.post<string[]>(this.imagenURL + "/addCategoria",cat);
   }
   public eliminarCategoriaGlobal(cat: string): Observable<string>{
-    return this.httpClient.post<string>(this.imagenURL + "eliminarCategoria",cat);
+    return this.httpClient.post<string>(this.imagenURL + "/eliminarCategoria",cat);
   }
 }
