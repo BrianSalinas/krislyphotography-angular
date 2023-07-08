@@ -10,8 +10,8 @@ import { ModeloCategorias } from 'src/app/Modelos/ModeloCategorias';
 
 export class ImagenService {
 
-  // imagenURL = 'https://krislyphotography-java-production.up.railway.app/api/main';
-  imagenURL: string = "http://localhost:8080/api/main";
+  imagenURL = 'https://krislyphotography-java-production.up.railway.app/api/main';
+  //imagenURL: string = "http://localhost:8080/api/main";
 
   constructor(private httpClient: HttpClient) { }
 
