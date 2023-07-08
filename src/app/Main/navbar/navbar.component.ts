@@ -15,22 +15,18 @@ export class NavbarComponent implements OnInit {
   constructor(private servicioGeneral: GeneralService) {
     if(sessionStorage.getItem('userlogin') == '1'){
       this.login = true;
-      console.log("EL LOGIN SI ES TRUEEEE")
     }
     if(sessionStorage.getItem('userRol') == 'admin'){
       this.admin = true;
-      console.log("SI ES ADMIN AAAAAA")
     }
   }
 
   ngOnInit() {
     if(sessionStorage.getItem('userlogin') == '1'){
       this.login = true;
-      console.log("EL LOGIN SI ES TRUEEEE")
     }
     if(sessionStorage.getItem('userRol') == 'admin'){
       this.admin = true;
-      console.log("SI ES ADMIN AAAAAA")
     }
   }
 

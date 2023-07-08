@@ -67,7 +67,6 @@ export class PreciosComponent implements OnInit {
         this.imagenesActuales.push(this.imagenes[j]);
       }
     }
-    console.log(this.imagenesActuales)
   }
   asignardescripcion() {
     for (let i = 0; i < this.planesActuales.length; i++) {

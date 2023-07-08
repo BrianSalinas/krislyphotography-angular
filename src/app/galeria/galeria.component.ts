@@ -13,6 +13,7 @@ export class GaleriaComponent implements OnInit{
   categoriasGlobalesTEMP: ModeloCategorias[] = [];
   imagenes: Imagen[] = [];
   categoriaActual: string = "TODO";
+  selectedImg = "";
   constructor(private imagenService: ImagenService) { }
 
   ngOnInit(): void {
@@ -68,5 +69,8 @@ export class GaleriaComponent implements OnInit{
     }
   }
 
+  openModal(imgUrl:string){
+    this.selectedImg = imgUrl;
+  }
 
 }

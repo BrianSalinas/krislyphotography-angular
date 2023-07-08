@@ -10,7 +10,7 @@
     <!--TABS-->
     <ul class="nav nav-tabs nav-fill">
       <li class="nav-item">
-        <a role="button" (click)="cambiarOpcion('TODO',-1)" class="nav-link" id="itemnavini">Todo</a>
+        <a role="button" (click)="cambiarOpcion('TODO',-1)" class="nav-link" id="itemnavini">All</a>
       </li>
       <li class="nav-item" *ngFor="let item of categoriasGlobales; let i=index">
         <a role="button" id="itemnav{{i}}" class="nav-link" (click)="cambiarOpcion(item.categoria,i)">{{item.categoria}}</a>
@@ -21,11 +21,33 @@
   </div>
 
   <div class="container-fluid mt-2">
-    <div class="grid-wrapper">
+    <div class="gallery">
       <div *ngFor="let item of imagenes">
-        <img
-          src="{{item.imagenUrl}}"
-          alt="" />
+        <img class="masonryImg" src="{{item.imagenUrl}}" (click)="openModal(item.imagenUrl)" data-bs-toggle="modal" data-bs-target="#imageDetailModal"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="imageDetailModal" tabindex="-1" aria-labelledby="imageDetailLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageDetailLabel">Detalle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <img class="modalImg" [src]="selectedImg">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
